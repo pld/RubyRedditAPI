@@ -45,7 +45,7 @@ module Reddit
       if terms
         http_options[:query].merge!({:q => terms})
       end
-      path = subreddit.to_s == "" ? "/r/search.json" : "/r/#{subreddit}/search.json"
+      path = subreddit.to_s == "" ? "/search.json" : "/r/#{subreddit}/search.json"
       read(path, http_options)
     end
 

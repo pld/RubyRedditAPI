@@ -5,12 +5,12 @@ $:.unshift lib unless $:.include?(lib)
 require "ruby_reddit_api/version"
 
 Gem::Specification.new do |s|
-  s.name        = "ruby_reddit_api"
+  s.name        = "ruby_reddit_api-h"
   s.version     = Reddit::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["James Cook"]
+  s.authors     = ["James Cook", "Peter Lubell-Doughtie"]
   s.email       = ["jamecook@gmail.com"]
-  s.homepage    = "http://github.com/jamescook/RubyRedditAPI"
+  s.homepage    = "http://github.com/pld/RubyRedditAPI"
   s.summary     = "Wrapper for reddit API"
   s.description = "Wraps many reddit API functions such as submission and comments browsing, voting, messaging, friending, and more."
   s.has_rdoc    = 'yard'
