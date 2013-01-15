@@ -18,13 +18,15 @@ module Reddit
           end
         else
           data     = json["data"]
-          Reddit::Base.instance_variable_set("@modhash", data["modhash"]) # Needed for api calls
+          unless data.empty?
+            Reddit::Base.instance_variable_set("@modhash", data["modhash"]) # Needed for api calls
 
-          children = data["children"] || [{"data" => data, "kind" => json["kind"] }]
-          children.each do |message|
-            kind     = message["kind"]
-            message["data"]["kind"] = kind
-            results << self.new(message["data"])
+            children = data["children"] || [{"data" => data, "kind" => json["kind"] }]
+            children.each do |message|
+              kind     = message["kind"]
+              message["data"]["kind"] = kind
+              results << self.new(message["data"])
+            end
           end
         end
 
